@@ -1,10 +1,5 @@
 ﻿using App9M.Entity.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace App9M.Entity
 {
@@ -51,6 +46,18 @@ namespace App9M.Entity
                     Description = "",
                 }
                 );
+            modelBuilder.Entity<tblUrlList>()
+                .HasIndex(e => e.Name)
+                .IsUnique();
+            modelBuilder.Entity<tblSettings>()
+                .HasIndex(ex => ex.Name)
+                .IsUnique();
+            modelBuilder.Entity<tblParameters>()
+                .HasIndex(p => new { p.urlId, p.Name })
+                .IsUnique();
+            modelBuilder.Entity<tblHeaders>()
+                .HasIndex(h => new { h.urlId, h.HeaderKey })
+                .IsUnique();
         }
         public DbSet<tblSettings> tblSettings { get; set; }
         public DbSet<tblUrlList> tblUrlList { get; set; }

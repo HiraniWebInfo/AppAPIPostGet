@@ -1,10 +1,7 @@
 ﻿using App9M.Data;
 using App9M.Entity;
-using Newtonsoft.Json;
 using RestSharp;
-using Newtonsoft.Json.Linq;
 using App9M.Entity.Models;
-using System.IO;
 
 namespace App9M
 {

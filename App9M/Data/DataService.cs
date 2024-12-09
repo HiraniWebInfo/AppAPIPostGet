@@ -1,6 +1,5 @@
 ﻿using App9M.Entity;
 using App9M.Entity.Models;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using RestSharp;
