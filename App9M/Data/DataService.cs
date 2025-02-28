@@ -8,7 +8,7 @@ namespace App9M.Data
 {
     public class DataService : iDataService
     {
-        private DataContext dataContext { get; set; }
+        private readonly DataContext dataContext;
         public string BaseUrl { get; set; }
         public List<tblUrlList> UrlList { get; set; }
         public List<tblParameters> parameters { get; set; }

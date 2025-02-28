@@ -358,6 +358,7 @@
             MinimizeBox = false;
             Name = "frmLoginAPI";
             ShowIcon = false;
+            ShowInTaskbar = false;
             Text = "Set Login API";
             FormClosed += frmLoginAPI_FormClosed;
             Load += frmLoginAPI_Load;

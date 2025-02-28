@@ -18,7 +18,7 @@ namespace App9M
 
         private void dgvHeaders_DoubleClick(object sender, EventArgs e)
         {
-            var item = (Entity.Models.tblHeaders)((DataGridView)sender).CurrentRow.DataBoundItem;
+            var item = (tblHeaders)((DataGridView)sender).CurrentRow.DataBoundItem;
 
             headerId = item.Id;
             txtHeader.Text = item.HeaderKey;
@@ -53,7 +53,7 @@ namespace App9M
         {
             var hdr = ds.headers.Where(h => h.HeaderKey == txtHeader.Text).FirstOrDefault();
             if (hdr == null)
-                ds.headers.Add(new Entity.Models.tblHeaders {Id=0, HeaderKey = txtHeader.Text, HeaderValue = txtValue.Text ,urlId = 0});
+                ds.headers.Add(new tblHeaders {Id=0, HeaderKey = txtHeader.Text, HeaderValue = txtValue.Text ,urlId = 0});
             else
             {
                 hdr.HeaderValue = txtValue.Text;

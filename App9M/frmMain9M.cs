@@ -12,18 +12,25 @@ namespace App9M
 
         private frmBaseUrl FrmBaseUrl;
         private frmLoginAPI FrmLoginAPI;
-        private Dictionary<string, string?> currentReqHeaders = new();
         private frmSetHeaders frmSetHeaders;
+        private frmSetParams frmSetParams;
+        private frmSetRefreshApi frmSetRefreshApi;
+
+        private Dictionary<string, string?> currentReqHeaders = new();
 
         public frmMain9M(iDataService _dataService, DataContext dataContext,
-            frmBaseUrl _FrmBaseUrl, frmLoginAPI _FrmLoginAPI, frmSetHeaders _FrmSetHeaders
-            )
+            frmBaseUrl _FrmBaseUrl, frmLoginAPI _FrmLoginAPI, frmSetHeaders _FrmSetHeaders,
+            frmSetParams _frmSetParams, frmSetRefreshApi _frmSetRefreshApi)
         {
             ds = _dataService;
             dc = dataContext;
+
             FrmBaseUrl = _FrmBaseUrl;
             FrmLoginAPI = _FrmLoginAPI;
             frmSetHeaders = _FrmSetHeaders;
+            frmSetParams = _frmSetParams;
+            frmSetRefreshApi = _frmSetRefreshApi;
+
             InitializeComponent();
         }
 
@@ -74,7 +81,8 @@ namespace App9M
         }
         private void loadDataServices()
         {
-            ds.BaseUrl = dc.tblSettings.Where(x => x.Name == "BaseUrl").First().Description;
+            ds.refreshLoginUrl();
+            ds.UrlList = dc.tblUrlList.ToList();
         }
 
         private void btnSetLoginApi_Click(object sender, EventArgs e)
@@ -84,7 +92,7 @@ namespace App9M
 
         private void btnSetRefreshAPI_Click(object sender, EventArgs e)
         {
-
+            frmSetRefreshApi.ShowDialog(this);
         }
 
         private void cboReqType_SelectedIndexChanged(object sender, EventArgs e)
@@ -125,6 +133,11 @@ namespace App9M
         private void btnSetHeaders_Click(object sender, EventArgs e)
         {
             frmSetHeaders.ShowDialog(this);
+        }
+
+        private void btnSetParams_Click(object sender, EventArgs e)
+        {
+            frmSetParams.ShowDialog(this);
         }
     }
 }

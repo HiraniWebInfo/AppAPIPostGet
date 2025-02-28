@@ -47,6 +47,8 @@ namespace App9M
                     services.AddTransient<frmBaseUrl>();
                     services.AddTransient<frmLoginAPI>();
                     services.AddTransient<frmSetHeaders>();
+                    services.AddTransient<frmSetParams>();
+                    services.AddTransient<frmSetRefreshApi>();
                 });
         }
     }

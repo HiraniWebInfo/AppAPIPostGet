@@ -36,17 +36,17 @@ namespace App9M
             txtValue = new TextBox();
             lstDynVariables = new ListBox();
             dgvHeaders = new DataGridView();
-            btnSaveNClose = new Button();
-            btnCancel = new Button();
-            label3 = new Label();
-            label4 = new Label();
-            btnAdd = new Button();
             Id = new DataGridViewTextBoxColumn();
             HeaderKey = new DataGridViewTextBoxColumn();
             HeaderValue = new DataGridViewTextBoxColumn();
             HeaderFinalValue = new DataGridViewTextBoxColumn();
             CreatedDate = new DataGridViewTextBoxColumn();
             UpdatedDate = new DataGridViewTextBoxColumn();
+            btnSaveNClose = new Button();
+            btnCancel = new Button();
+            label3 = new Label();
+            label4 = new Label();
+            btnAdd = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvHeaders).BeginInit();
             SuspendLayout();
             // 
@@ -107,54 +107,6 @@ namespace App9M
             dgvHeaders.UserDeletingRow += dgvHeaders_UserDeletingRow;
             dgvHeaders.DoubleClick += dgvHeaders_DoubleClick;
             // 
-            // btnSaveNClose
-            // 
-            btnSaveNClose.Location = new Point(340, 351);
-            btnSaveNClose.Name = "btnSaveNClose";
-            btnSaveNClose.Size = new Size(91, 23);
-            btnSaveNClose.TabIndex = 8;
-            btnSaveNClose.Text = "Save && Close";
-            btnSaveNClose.UseVisualStyleBackColor = true;
-            btnSaveNClose.Click += btnSaveNClose_Click;
-            // 
-            // btnCancel
-            // 
-            btnCancel.Location = new Point(449, 351);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 23);
-            btnCancel.TabIndex = 9;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = true;
-            btnCancel.Click += btnCancel_Click;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(544, 9);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 15);
-            label3.TabIndex = 2;
-            label3.Text = "Dynamic variables";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(12, 68);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 15);
-            label4.TabIndex = 9;
-            label4.Text = "Headers";
-            // 
-            // btnAdd
-            // 
-            btnAdd.Location = new Point(463, 56);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
-            btnAdd.TabIndex = 5;
-            btnAdd.Text = "&Add";
-            btnAdd.UseVisualStyleBackColor = true;
-            btnAdd.Click += btnAdd_Click;
-            // 
             // Id
             // 
             Id.DataPropertyName = "Id";
@@ -203,6 +155,54 @@ namespace App9M
             UpdatedDate.ReadOnly = true;
             UpdatedDate.Visible = false;
             // 
+            // btnSaveNClose
+            // 
+            btnSaveNClose.Location = new Point(340, 351);
+            btnSaveNClose.Name = "btnSaveNClose";
+            btnSaveNClose.Size = new Size(91, 23);
+            btnSaveNClose.TabIndex = 8;
+            btnSaveNClose.Text = "Save && Close";
+            btnSaveNClose.UseVisualStyleBackColor = true;
+            btnSaveNClose.Click += btnSaveNClose_Click;
+            // 
+            // btnCancel
+            // 
+            btnCancel.Location = new Point(449, 351);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 9;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(544, 9);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Dynamic variables";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(12, 68);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 15);
+            label4.TabIndex = 9;
+            label4.Text = "Headers";
+            // 
+            // btnAdd
+            // 
+            btnAdd.Location = new Point(463, 56);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(75, 23);
+            btnAdd.TabIndex = 5;
+            btnAdd.Text = "&Add";
+            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
+            // 
             // frmSetHeaders
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -219,7 +219,11 @@ namespace App9M
             Controls.Add(txtHeader);
             Controls.Add(label2);
             Controls.Add(label1);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "frmSetHeaders";
+            ShowIcon = false;
+            ShowInTaskbar = false;
             Text = "frmSetHeaders";
             Load += frmSetHeaders_Load;
             ((System.ComponentModel.ISupportInitialize)dgvHeaders).EndInit();

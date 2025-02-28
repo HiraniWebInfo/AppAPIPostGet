@@ -37,17 +37,23 @@
             btnSetParams = new Button();
             btnGo = new Button();
             txtAPIUrl = new TextBox();
-            txtReqText = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
             txtRespBody = new TextBox();
             label4 = new Label();
             label5 = new Label();
             btnSavetoList = new Button();
             prgAPIprogress = new ProgressBar();
             bgwRefreshToken = new System.ComponentModel.BackgroundWorker();
-            label6 = new Label();
+            tabControl1 = new TabControl();
+            tbHeaders = new TabPage();
+            tbBody = new TabPage();
+            txtReqText = new TextBox();
+            dataGridView1 = new DataGridView();
+            tabControl1.SuspendLayout();
+            tbHeaders.SuspendLayout();
+            tbBody.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // btnSetBaseUrl
@@ -124,6 +130,7 @@
             btnSetParams.TabIndex = 4;
             btnSetParams.Text = "Set Global Params";
             btnSetParams.UseVisualStyleBackColor = true;
+            btnSetParams.Click += btnSetParams_Click;
             // 
             // btnGo
             // 
@@ -142,15 +149,6 @@
             txtAPIUrl.Size = new Size(312, 23);
             txtAPIUrl.TabIndex = 9;
             // 
-            // txtReqText
-            // 
-            txtReqText.Location = new Point(12, 135);
-            txtReqText.Multiline = true;
-            txtReqText.Name = "txtReqText";
-            txtReqText.ScrollBars = ScrollBars.Both;
-            txtReqText.Size = new Size(524, 151);
-            txtReqText.TabIndex = 12;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -168,15 +166,6 @@
             label2.Size = new Size(73, 15);
             label2.TabIndex = 7;
             label2.Text = "Request URL";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(12, 117);
-            label3.Name = "label3";
-            label3.Size = new Size(79, 15);
-            label3.TabIndex = 11;
-            label3.Text = "Request Body";
             // 
             // txtRespBody
             // 
@@ -222,30 +211,68 @@
             prgAPIprogress.Size = new Size(206, 23);
             prgAPIprogress.TabIndex = 16;
             // 
-            // label6
+            // tabControl1
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(98, 117);
-            label6.Name = "label6";
-            label6.Size = new Size(89, 15);
-            label6.TabIndex = 19;
-            label6.Text = "Requst Headers";
+            tabControl1.Controls.Add(tbHeaders);
+            tabControl1.Controls.Add(tbBody);
+            tabControl1.Location = new Point(12, 108);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(524, 194);
+            tabControl1.TabIndex = 20;
+            // 
+            // tbHeaders
+            // 
+            tbHeaders.Controls.Add(dataGridView1);
+            tbHeaders.Location = new Point(4, 24);
+            tbHeaders.Name = "tbHeaders";
+            tbHeaders.Padding = new Padding(3);
+            tbHeaders.Size = new Size(516, 166);
+            tbHeaders.TabIndex = 0;
+            tbHeaders.Text = "Headers";
+            tbHeaders.UseVisualStyleBackColor = true;
+            // 
+            // tbBody
+            // 
+            tbBody.Controls.Add(txtReqText);
+            tbBody.Location = new Point(4, 24);
+            tbBody.Name = "tbBody";
+            tbBody.Padding = new Padding(3);
+            tbBody.Size = new Size(516, 166);
+            tbBody.TabIndex = 1;
+            tbBody.Text = "Body";
+            tbBody.UseVisualStyleBackColor = true;
+            // 
+            // txtReqText
+            // 
+            txtReqText.Location = new Point(6, 6);
+            txtReqText.Multiline = true;
+            txtReqText.Name = "txtReqText";
+            txtReqText.ScrollBars = ScrollBars.Both;
+            txtReqText.Size = new Size(504, 154);
+            txtReqText.TabIndex = 13;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(6, 6);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(504, 154);
+            dataGridView1.TabIndex = 0;
             // 
             // frmMain9M
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 519);
-            Controls.Add(label6);
+            Controls.Add(tabControl1);
             Controls.Add(prgAPIprogress);
             Controls.Add(btnSavetoList);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(txtRespBody);
-            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(txtReqText);
             Controls.Add(txtAPIUrl);
             Controls.Add(btnGo);
             Controls.Add(btnSetParams);
@@ -259,6 +286,11 @@
             Text = "App9M : The tiny low weight API tool";
             FormClosed += frmMain9M_FormClosed;
             Load += frmMain9M_Load;
+            tabControl1.ResumeLayout(false);
+            tbHeaders.ResumeLayout(false);
+            tbBody.ResumeLayout(false);
+            tbBody.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -274,16 +306,18 @@
         private Button btnSetParams;
         private Button btnGo;
         private TextBox txtAPIUrl;
-        private TextBox txtReqText;
         private Label label1;
         private Label label2;
-        private Label label3;
         private TextBox txtRespBody;
         private Label label4;
         private Label label5;
         private Button btnSavetoList;
         private ProgressBar prgAPIprogress;
         private System.ComponentModel.BackgroundWorker bgwRefreshToken;
-        private Label label6;
+        private TabControl tabControl1;
+        private TabPage tbHeaders;
+        private TabPage tbBody;
+        private TextBox txtReqText;
+        private DataGridView dataGridView1;
     }
 }
